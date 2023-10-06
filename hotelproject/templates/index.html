@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for i in hotel_list %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" width="250px" height="250px">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+<!--    <p class="card-text">{{i.desc}}</p>-->
+    <a href="{% url 'hotelapp:detail' i.id %}" class="btn btn-primary">view details</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<!--<img src="{{i.img.url}}" width="100" height="100">-->
+<!--<a href="">{{i.name}}<br>-->
+
+    {% endblock %}
